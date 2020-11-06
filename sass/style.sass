@@ -5,20 +5,55 @@
 
 $darker-blue: #053f59
 $brighter-blue: #1b6a8f
+$text-color: #3d3d3d 
 
 html, body, *
     margin: 0
     padding: 0
     box-sizing: border-box
     font-family: 'Roboto', sans-serif
+    color: #3d3d3d
 
 
 //====== REUSABLE COMPONENTS ======
 
 
 .row 
-    width: 1024px
+    width: 58%
     margin: 0 auto
+
+.btn
+    border: none
+    background: transparent
+    cursor: pointer
+
+hr 
+    border-top: 2px dotted #999999
+
+h2
+    font-size: 28px
+    font-weight: 300  
+    text-transform: uppercase
+    animation: fade-in-right 1.5s
+
+h5 
+    font-size: 16px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 25px
+    margin-bottom: 5px
+
+    span 
+        text-transform: uppercase
+
+h6
+    font-weight: 400
+    font-size: 18px
+
+.paragraph
+    text-align: justify
+    font-size: 18px
+    line-height: 1.3
 
 
 //====== TOP NAVIGATION ======
@@ -26,7 +61,7 @@ html, body, *
 nav 
     height: 90px
     width: 100%
-    background: linear-gradient(to right, $darker-blue, $brighter-blue);
+    background: linear-gradient(to right, $darker-blue, $brighter-blue)
 
     .navigation
         display: flex
@@ -68,7 +103,7 @@ nav
                 position: absolute
                 bottom: 0
                 left: 0
-                transform: translateX(-101%)
+                transform: translateX(-110%)
                 transition: transform .5s
 
             a:hover 
@@ -81,12 +116,233 @@ nav
     .search-box
         position: absolute
         right: 10px
-        top: 10px
+        top: 27px
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
 
+        .search-box-item
+            overflow: hidden
+
+            .search-box--input
+                height: 25px
+                width: 150px
+                padding: 2px 5px
+                border: none
+                transform: translateX(100%)
+                transition: transform .5s
+
+            .open 
+                transform: translateX(0)
+
+        .search-box--icon
+            height: 50px
+            width: 50px
+            margin-left: 5px
+            padding: 4px
+            border-radius: 50px 
+            transition: background .5s
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+            
+        .search-box--icon:hover
+            background: #ffffff79
+            
 
 //====== SIDE NAVIGATION ======
 
 .side-nav
     position: fixed
-    width: 200px
+    width: 210px
     left: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 10px
+    transform: translateX(-166px)
+    transition: transform .5s
+
+    .side-nav-logo
+        padding-top: 20px
+        margin-bottom: 20px
+
+    .side-nav-content
+        margin-left: 25px
+        display: flex
+
+        .side-nav-content--left
+            width: 75%
+            padding: 5px
+            display: flex 
+            flex-direction: column
+
+            hr 
+                margin: 15px 0
+                width: 90%
+
+            .side-nav-content--left--links
+                text-decoration: none
+                color: $text-color 
+                font-size: 18px
+                margin: 3px 0
+                transition: transform .5s
+
+            .side-nav-content--left--links:hover
+                transform: translateX(10px)
+
+            .side-nav-content--left--socials
+                margin: 7px 0
+                padding: 3px 8px
+                border-radius: 25px
+                background: transparent
+                width: 45px
+                display: flex
+                align-items: center
+                transition: background .5s, width .5s
+
+            .side-nav-content--left--socials:hover
+                background: #e9e9e9
+                width: 55px
+        
+        .side-nav-content--right
+            width: 25%
+            padding: 3px
+            display: flex
+            align-items: center
+
+            .open-side-menu
+                padding: 5px
+                animation: arrow-anim 2s ease-in infinite
+
+                img 
+                    transform: rotateZ(0deg)
+                    transition: transform .5s
+
+                span 
+                    opacity: 1
+                    visibility: visible
+                    transition: opacity .5s, visibility .5s
+
+            .open-side-menu:hover
+                animation-play-state: paused
+
+            .open-side-menu.open
+                img 
+                    transform: rotateZ(180deg)
+
+                span 
+                    opacity: 0
+                    visibility: hidden
+
+.side-nav.open
+    transform: translateX(0)
+
+
+//====== MAIN SECTION ======
+
+
+.container 
+    width: 100%
+    padding-top: 50px
+
+    .section--heading
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 50px 0
+
+        img
+            margin-right: 20px
+            animation: home-anim 1s ease-in 
+
+    .section--content
+        width: 100%
+        column-count: 2
+        column-gap: 30px
+
+        img 
+            width: 100%
+            animation: fade-in-left 1s ease-in
+        
+    .content-heading
+        margin-top: 50px
+        margin-bottom: 25px
+        text-transform: lowercase
+
+
+//====== ANIMATIONS ======
+
+
+@keyframes arrow-anim
+    0%
+        transform: translateX(0)
+        
+    30%
+        transform: translateX(10px)
+
+    40%
+        transform: translateX(0px)
+
+    50%
+        transform: translateX(6px)
+
+    60%
+        transform: translateX(0px)
+
+    70%
+        transform: translateX(4px)
+
+    80%
+        transform: translateX(0px)
+
+    90%
+        transform: translateX(2px)
+
+    100%
+        transform: translateX(0px)
+
+@keyframes home-anim
+    0%
+        transform: scale(1)
+        
+    50%
+        transform: scale(1.15)
+
+    100%
+        transform: scale(1)   
+
+@keyframes popup-anim
+    0%
+        opacity: 0
+        
+    100%
+        opacity: 1
+
+@keyframes fade-in-left 
+    0%
+        transform: translateX(-100px)
+        opacity: 0
+
+    100%
+        transform: translateX(0px)
+        opacity: 1
+
+@keyframes fade-in-right 
+    0%
+        transform: translateX(100px)
+        opacity: 0
+
+    100%
+        transform: translateX(0px)
+        opacity: 1
+
+@media screen and ( max-width: 1540px )
+    
+    nav 
+        .navigation
+            .navigation-items 
+                font-size: 18px
+                padding-left: 30px

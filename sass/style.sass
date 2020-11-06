@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+//====== VARIABLES ======
+
+
+$darker-blue: #053f59
+$brighter-blue: #1b6a8f
+
+html, body, *
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+
+
+//====== REUSABLE COMPONENTS ======
+
+
+.row 
+    width: 1024px
+    margin: 0 auto
+
+
+//====== TOP NAVIGATION ======
+
+nav 
+    height: 90px
+    width: 100%
+    background: linear-gradient(to right, $darker-blue, $brighter-blue);
+
+    .navigation
+        display: flex
+        width: 100%
+        position: relative
+
+        .navigation-logo
+            position: absolute
+            display: block
+            background: #fff
+            padding: 15px 25px
+
+        .navigation-empty
+            width: 240px
+
+        .navigation-items 
+            flex: 1
+            display: flex
+            justify-content: space-between
+            padding-left: 45px
+            font-size: 22px
+            font-weight: 300
+
+            a 
+                color: #ffffff
+                display: block
+                position: relative
+                overflow: hidden
+                margin-top: 40px
+                padding-bottom: 7px
+                text-decoration: none
+                transition: transform .5s, color .5s
+
+            a::after 
+                content: ''
+                height: 1px 
+                width: 100%
+                background: #fff
+                position: absolute
+                bottom: 0
+                left: 0
+                transform: translateX(-101%)
+                transition: transform .5s
+
+            a:hover 
+                transform: translateY(-3px)
+                color: #ebebeb
+
+            a:hover::after 
+                transform: translateX(0)
+
+    .search-box
+        position: absolute
+        right: 10px
+        top: 10px
+
+
+//====== SIDE NAVIGATION ======
+
+.side-nav
+    position: fixed
+    width: 200px
+    left: 0

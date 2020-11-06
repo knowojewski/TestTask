@@ -1,1 +1,108 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+html, body, * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.row {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+nav {
+  height: 90px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#053f59), to(#1b6a8f));
+  background: linear-gradient(to right, #053f59, #1b6a8f);
+}
+
+nav .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+nav .navigation .navigation-logo {
+  position: absolute;
+  display: block;
+  background: #fff;
+  padding: 15px 25px;
+}
+
+nav .navigation .navigation-empty {
+  width: 240px;
+}
+
+nav .navigation .navigation-items {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 45px;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+nav .navigation .navigation-items a {
+  color: #ffffff;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  padding-bottom: 7px;
+  text-decoration: none;
+  -webkit-transition: color .5s, -webkit-transform .5s;
+  transition: color .5s, -webkit-transform .5s;
+  transition: transform .5s, color .5s;
+  transition: transform .5s, color .5s, -webkit-transform .5s;
+}
+
+nav .navigation .navigation-items a::after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(-101%);
+          transform: translateX(-101%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+nav .navigation .navigation-items a:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: #ebebeb;
+}
+
+nav .navigation .navigation-items a:hover::after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+nav .search-box {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.side-nav {
+  position: fixed;
+  width: 200px;
+  left: 0;
+}
+/*# sourceMappingURL=style.css.map */
